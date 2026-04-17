@@ -102,7 +102,7 @@ class _IssueScreenState extends State<IssueScreen> {
     try {
       final response = await http.post(
         Uri.parse(
-            'http://10.0.2.2:8000/store?id=${idController.text}&data=${dataController.text}'),
+            'http://127.0.0.1:8000/store?id=${idController.text}&data=${dataController.text}'),
       );
       final result = jsonDecode(response.body);
       setState(() {
@@ -221,7 +221,7 @@ class _ScanScreenState extends State<ScanScreen> {
     try {
       final response = await http.get(
         Uri.parse(
-            'http://10.0.2.2:8000/verify?id=$id&data=&original_hash=$hash'),
+            'http://127.0.0.1:8000/verify?id=$id&data=&original_hash=$hash'),
       );
       final result = jsonDecode(response.body);
       Navigator.push(
